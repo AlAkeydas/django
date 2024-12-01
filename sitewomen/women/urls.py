@@ -7,9 +7,14 @@ from . import converters
 register_converter(converters.FourDigitYearConverter, "year4")
 
 urlpatterns = [
-    path('', views.index),
-    path('cats/<int:cat_id>/', views.categories),
-    path('cats/<slug:cat_slug>/', views.categories_by_slug),
-    path('archive/<year4:year>/',views.archive)
+    path('', views.index, name='home'),
+    #path('cats/<int:cat_id>/', views.categories, name='cats_id'),
+    #path('cats/<slug:cat_slug>/', views.categories_by_slug, name = 'cats'),
+    #path('archive/<year4:year>/',views.archive, name = 'archive'),
+    path('about/', views.about, name='about'),
+    path('post/<int:post_id>/', views.show_post, name="post"),
+    path('contact/', views.contact, name='contact'),
+    path('login/', views.login, name='login'),
+    path('addpage/',views.addpage, name='add_page'),
 
 ]

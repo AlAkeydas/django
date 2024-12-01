@@ -25,3 +25,5 @@ urlpatterns = [
     path('',include('women.urls')),
  
 ]
+
+handler404 = views.padge_not_found
