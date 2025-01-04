@@ -23,7 +23,7 @@ def index(requset):
     return render(requset,'women/index.html', context=data)
 
 def about(request):
-    return render(request, 'women/about.html', {'title': "главная страница"})
+    return render(request, 'women/about.html', {'title': "О сайте", 'menu': menu})
 
 def categories(request, cat_id):
     return HttpResponse(f"<h1>Cтатьи по категориям</h1><p>id: {cat_id}</p>")
@@ -43,7 +43,7 @@ def padge_not_found(request, exception):
     return HttpResponseNotFound("<h1>Страница не найдена</h1>")
 
 def show_post(request, post_id):
-    return HttpResponse("<h1>Отображение статьи с id = {post_id}")
+    return HttpResponse(f"<h1>Отображение статьи с id = {post_id}")
 
 def addpage(request):
     HttpResponse("Добавление статьи")
